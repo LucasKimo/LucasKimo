@@ -77,7 +77,7 @@ text, tspan {white-space: pre;}
 <tspan x="424" y="150"><tspan class="dots">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="dots"> . </tspan><tspan class="value">Python, TypeScript, JavaScript, Java</tspan></tspan>
 <tspan x="424" y="170"><tspan class="dots">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Real</tspan>:<tspan class="dots"> ............................ </tspan><tspan class="value">English, Korean</tspan></tspan>
 <tspan x="424" y="190"><tspan class="dots">. </tspan></tspan>
-<tspan x="424" y="210"><tspan class="dots">. </tspan><tspan class="key">AI</tspan>.<tspan class="key">Stack</tspan>:<tspan class="dots"> ................. </tspan><tspan class="value">PyTorch, LangChain, Hugging Face</tspan></tspan>
+<tspan x="424" y="210"><tspan class="dots">. </tspan><tspan class="key">AI</tspan>.<tspan class="key">Stack</tspan>:<tspan class="dots"> ........................ </tspan><tspan class="value">LangChain, RAG, LLMs, MCP</tspan></tspan>
 <tspan x="424" y="230"><tspan class="dots">. </tspan><tspan class="key">Web</tspan>.<tspan class="key">Stack</tspan>:<tspan class="dots"> ......................... </tspan><tspan class="value">React, Node.js, FastAPI</tspan></tspan>
 <tspan x="424" y="250"><tspan class="dots">. </tspan><tspan class="key">Cloud</tspan>:<tspan class="dots"> .................................. </tspan><tspan class="value">Azure, AWS, Docker</tspan></tspan>
 <tspan x="424" y="270"></tspan>
