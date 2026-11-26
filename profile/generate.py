@@ -29,7 +29,7 @@ INFO = [
     ("IDE", "VS Code, Jupyter"),
     None,  # blank line
     ("Languages.Programming", "Python, TypeScript, JavaScript, Java"),
-    ("Languages.Computer", "HTML, CSS, SQL, JSON, YAML"),
+    ("Languages.Real", "English, Korean"),
     None,
     ("AI.Stack", "PyTorch, LangChain, Hugging Face"),
     ("Web.Stack", "React, Node.js, FastAPI"),
