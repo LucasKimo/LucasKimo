@@ -31,7 +31,7 @@ INFO = [
     ("Languages.Programming", "Python, TypeScript, JavaScript, Java"),
     ("Languages.Real", "English, Korean"),
     None,
-    ("AI.Stack", "PyTorch, LangChain, Hugging Face"),
+    ("AI.Stack", "LangChain, RAG, LLMs, MCP"),
     ("Web.Stack", "React, Node.js, FastAPI"),
     ("Cloud", "Azure, AWS, Docker"),
 ]
