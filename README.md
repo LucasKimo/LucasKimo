@@ -1,3 +1,10 @@
+<a href="https://github.com/LucasKimo">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/LucasKimo/LucasKimo/main/dark_mode.svg">
+    <img alt="Lucas Kim's GitHub Profile README" src="https://raw.githubusercontent.com/LucasKimo/LucasKimo/main/light_mode.svg">
+  </picture>
+</a>
+
 ### <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"> Nice ways to reach me
 <a href="https://YOUR-BLOG-URL" target="_blank"><img src="https://img.shields.io/badge/Tech Blog-20C997?style=flat-square&logo=Velog&logoColor=white"/></a>
 <a href="mailto:contact@lucaskim.dev" target="_blank"><img src="https://img.shields.io/badge/contac@lucaskim.dev-EA4335?style=flat-square&logo=Gmail&logoColor=white"/></a>

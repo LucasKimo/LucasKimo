@@ -1,0 +1,36 @@
+﻿name: Profile-Card
+
+on:
+  push:
+    branches: [main]
+    paths: ["profile/**"]
+  schedule: # daily at 04:00 UTC
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install pillow
+      - name: Generate SVGs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USERNAME: ${{ github.repository_owner }}
+        run: python profile/generate.py
+      - name: Commit & Push
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add dark_mode.svg light_mode.svg
+          if git commit -m "Update profile card"; then
+            git pull --rebase
+            git push
+          fi
