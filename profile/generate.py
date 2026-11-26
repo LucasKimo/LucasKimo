@@ -24,9 +24,9 @@ HEADER = "lucas@kim"
 
 INFO = [
     ("Role", "Software Engineer"),
-    ("Focus", "AI Engineering, Machine Learning"),
+    ("Focus", "AI Engineering, Full-stack Development"),
     ("Education", "Queensland University of Technology"),
-    ("IDE", "VS Code, Jupyter, Claude Code"),
+    ("IDE", "VS Code, Jupyter"),
     None,  # blank line
     ("Languages.Programming", "Python, TypeScript, JavaScript, Java"),
     ("Languages.Computer", "HTML, CSS, SQL, JSON, YAML"),
@@ -38,7 +38,7 @@ INFO = [
 
 CONTACT = [
     ("Email", "contact@lucaskim.dev"),
-    ("GitHub", USERNAME),
+    ("LinkedIn", "lucas-eunsu-kim"),
 ]
 
 # ----------------------------------------------------------------------------

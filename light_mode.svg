@@ -70,9 +70,9 @@ text, tspan {white-space: pre;}
 <text x="424" y="30" fill="#24292f">
 <tspan x="424" y="30">lucas@kim -———————————————————————————————————————————————————</tspan>
 <tspan x="424" y="50"><tspan class="dots">. </tspan><tspan class="key">Role</tspan>:<tspan class="dots"> .................................... </tspan><tspan class="value">Software Engineer</tspan></tspan>
-<tspan x="424" y="70"><tspan class="dots">. </tspan><tspan class="key">Focus</tspan>:<tspan class="dots"> .................... </tspan><tspan class="value">AI Engineering, Machine Learning</tspan></tspan>
+<tspan x="424" y="70"><tspan class="dots">. </tspan><tspan class="key">Focus</tspan>:<tspan class="dots"> .............. </tspan><tspan class="value">AI Engineering, Full-stack Development</tspan></tspan>
 <tspan x="424" y="90"><tspan class="dots">. </tspan><tspan class="key">Education</tspan>:<tspan class="dots"> ............. </tspan><tspan class="value">Queensland University of Technology</tspan></tspan>
-<tspan x="424" y="110"><tspan class="dots">. </tspan><tspan class="key">IDE</tspan>:<tspan class="dots"> ......................... </tspan><tspan class="value">VS Code, Jupyter, Claude Code</tspan></tspan>
+<tspan x="424" y="110"><tspan class="dots">. </tspan><tspan class="key">IDE</tspan>:<tspan class="dots"> ...................................... </tspan><tspan class="value">VS Code, Jupyter</tspan></tspan>
 <tspan x="424" y="130"><tspan class="dots">. </tspan></tspan>
 <tspan x="424" y="150"><tspan class="dots">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="dots"> . </tspan><tspan class="value">Python, TypeScript, JavaScript, Java</tspan></tspan>
 <tspan x="424" y="170"><tspan class="dots">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Computer</tspan>:<tspan class="dots"> ............. </tspan><tspan class="value">HTML, CSS, SQL, JSON, YAML</tspan></tspan>
@@ -83,12 +83,12 @@ text, tspan {white-space: pre;}
 <tspan x="424" y="270"></tspan>
 <tspan x="424" y="290">- Contact -———————————————————————————————————————————————————</tspan>
 <tspan x="424" y="310"><tspan class="dots">. </tspan><tspan class="key">Email</tspan>:<tspan class="dots"> ................................ </tspan><tspan class="value">contact@lucaskim.dev</tspan></tspan>
-<tspan x="424" y="330"><tspan class="dots">. </tspan><tspan class="key">GitHub</tspan>:<tspan class="dots"> .......................................... </tspan><tspan class="value">LucasKimo</tspan></tspan>
+<tspan x="424" y="330"><tspan class="dots">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="dots"> .................................. </tspan><tspan class="value">lucas-eunsu-kim</tspan></tspan>
 <tspan x="424" y="350"></tspan>
 <tspan x="424" y="370">- GitHub Stats -——————————————————————————————————————————————</tspan>
 <tspan x="424" y="390"><tspan class="dots">. </tspan><tspan class="key">Repos</tspan>:<tspan class="dots"> .................................................. </tspan><tspan class="value">11</tspan></tspan>
 <tspan x="424" y="410"><tspan class="dots">. </tspan><tspan class="key">Stars</tspan>:<tspan class="dots"> ................................................... </tspan><tspan class="value">2</tspan></tspan>
-<tspan x="424" y="430"><tspan class="dots">. </tspan><tspan class="key">Commits</tspan>:<tspan class="dots"> ............................................... </tspan><tspan class="value">241</tspan></tspan>
+<tspan x="424" y="430"><tspan class="dots">. </tspan><tspan class="key">Commits</tspan>:<tspan class="dots"> ................................................. </tspan><tspan class="value">—</tspan></tspan>
 <tspan x="424" y="450"><tspan class="dots">. </tspan><tspan class="key">Followers</tspan>:<tspan class="dots"> ............................................... </tspan><tspan class="value">4</tspan></tspan>
 <tspan x="424" y="470"><tspan class="dots">. </tspan><tspan class="key">Last</tspan>.<tspan class="key">Updated</tspan>:<tspan class="dots"> ................................... </tspan><tspan class="value">2026-11-26</tspan></tspan>
 </text>
