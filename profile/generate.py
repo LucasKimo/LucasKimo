@@ -14,7 +14,7 @@ import urllib.request
 from datetime import datetime, timezone
 from xml.sax.saxutils import escape
 
-from PIL import Image, ImageOps
+from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 
 # ----------------------------------------------------------------------------
 # Edit these to change what the card says.
@@ -47,8 +47,15 @@ CONTACT = [
 LINE_H = 20          # px between lines
 CHAR_W = 9.6         # approx width of one 16px monospace character
 TEXT_COLS = 62       # width of each right-hand line in characters
-ART_COLS = 40
-RAMP = " .:-=+*#%@"  # dim -> dense
+ART_COLS = 40        # width of the art area, measured in 16px characters
+ART_SCALE = 2.5      # art uses a smaller font: 2.5x more columns and rows
+ART_FONT = 16 / ART_SCALE
+ART_LINE_H = LINE_H / ART_SCALE
+ART_W = ART_COLS * CHAR_W  # art area width in px
+# dim -> dense; a long ramp gives smoother shading
+RAMP = (" .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$")
+ART_CONTRAST = 1.4   # >1 = punchier face, 1 = original
+ART_SHARPEN = 160    # unsharp mask strength (percent); 0 = off
 
 THEMES = {
     "dark": {"bg": "#161b22", "fg": "#c9d1d9", "key": "#ffa657",
@@ -108,24 +115,32 @@ def get_stats():
 
 
 def get_ascii(rows):
+    """Return {'dark': [...], 'light': [...]} ASCII lines for the avatar."""
     raw = _request(f"https://github.com/{USERNAME}.png?size=460")
     img = Image.open(io.BytesIO(raw)).convert("L")
-    # Crop to the same aspect ratio as the ASCII block, then shrink to one
-    # pixel per character.
-    target = (ART_COLS * CHAR_W) / (rows * LINE_H)
+    cols = round(ART_COLS * ART_SCALE)
+    art_rows = round(rows * ART_SCALE)
+    # Crop to the same aspect ratio as the ASCII block.
+    target = ART_W / (rows * LINE_H)
     img = ImageOps.fit(img, (int(img.height * target), img.height))
-    img = ImageOps.autocontrast(img.resize((ART_COLS, rows)))
-    px = [img.getpixel((c, r)) for r in range(rows) for c in range(ART_COLS)]
+    # Bring out facial detail before shrinking.
+    img = ImageOps.autocontrast(img, cutoff=1)
+    if ART_SHARPEN:
+        img = img.filter(ImageFilter.UnsharpMask(radius=2, percent=ART_SHARPEN))
+    img = ImageEnhance.Contrast(img).enhance(ART_CONTRAST)
+    img = img.resize((cols, art_rows), Image.LANCZOS)
+    img = ImageOps.autocontrast(img, cutoff=0.5)
+    n = len(RAMP)
     out = {}
     for theme, invert in (("dark", False), ("light", True)):
         lines = []
-        for r in range(rows):
+        for r in range(art_rows):
             line = ""
-            for c in range(ART_COLS):
-                v = px[r * ART_COLS + c] / 255
+            for c in range(cols):
+                v = img.getpixel((c, r)) / 255
                 if invert:
                     v = 1 - v
-                line += RAMP[min(int(v * len(RAMP)), len(RAMP) - 1)]
+                line += RAMP[min(int(v * n), n - 1)]
             lines.append(line)
         out[theme] = lines
     return out
@@ -172,7 +187,7 @@ def build_lines(stats):
 def render(theme, art, lines):
     t = THEMES[theme]
     rows = len(lines)
-    text_x = 15 + int(ART_COLS * CHAR_W) + 25
+    text_x = 15 + int(ART_W) + 25
     width = text_x + int(TEXT_COLS * CHAR_W) + 15
     height = rows * LINE_H + 25
     out = [
@@ -187,10 +202,14 @@ def render(theme, art, lines):
         "text, tspan {white-space: pre;}",
         "</style>",
         f'<rect width="{width}px" height="{height}px" fill="{t["bg"]}" rx="15"/>',
-        f'<text x="15" y="30" fill="{t["fg"]}">',
+        f'<text x="15" y="30" fill="{t["fg"]}" font-size="{ART_FONT:g}px">',
     ]
+    # textLength pins every art line to the same width whatever font loads.
+    top = 30 - 0.75 * (16 - ART_FONT)  # align art top with the first text line
     for i, line in enumerate(art):
-        out.append(f'<tspan x="15" y="{30 + i * LINE_H}">{escape(line)}</tspan>')
+        y = top + i * ART_LINE_H
+        out.append(f'<tspan x="15" y="{y:.1f}" textLength="{ART_W:.0f}" '
+                   f'lengthAdjust="spacingAndGlyphs">{escape(line)}</tspan>')
     out.append("</text>")
     out.append(f'<text x="{text_x}" y="30" fill="{t["fg"]}">')
     for i, line in enumerate(lines):
